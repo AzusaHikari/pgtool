@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PGTools</title>
+    <link th:href="@{/webjars/bootstrap/5.1.1/css/bootstrap.min.css}" rel="stylesheet"/>
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light" th:fragment="mainTopbar">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#" th:href="@{/}">PGTool</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbarNav"
+                aria-controls="mainNavbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNavbarNav">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">命运冠位指定</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" th:href="@{/uma/index}">赛马娘</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">公主连接</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<nav class="navbar navbar-expand-lg navbar-light bg-light" th:fragment="fgoTopbar">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#" th:href="@{/}">PGTool</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#fgoNavbarNav"
+                aria-controls="fgoNavbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="fgoNavbarNav">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">从者</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">礼装</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">指令纹章</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<nav class="navbar navbar-expand-lg navbar-light bg-light" th:fragment="pcrTopbar">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#" th:href="@{/}">PGTool</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#pcrNavbarNav"
+                aria-controls="pcrNavbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="pcrNavbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">账号</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">角色</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<nav class="navbar navbar-expand-lg navbar-light bg-light" th:fragment="umaTopbar">
+    <div class="container">
+        <a class="navbar-brand" href="#" th:href="@{/}">PGTool</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#umaNavbarNav"
+                aria-controls="umaNavbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="umaNavbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">角色</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#" th:href="@{/uma/supportCardList}">支援卡</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">技能</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">比赛</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" th:href="@{/uma/msgpackList}">育成</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">种马</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- Javascript-->
+<script th:src="@{/webjars/bootstrap/5.1.1/js/bootstrap.bundle.min.js}"></script>
+</body>
+
+</html>

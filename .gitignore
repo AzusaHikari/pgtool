@@ -1,0 +1,10 @@
+*.iml
+.classpath
+.settings/
+target/
+.factorypath
+.project
+*.log
+*.jar
+.idea/
+.vscode/

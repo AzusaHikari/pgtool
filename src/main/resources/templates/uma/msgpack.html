@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PGTools</title>
+    <link th:href="@{/webjars/bootstrap/5.1.1/css/bootstrap.min.css}" rel="stylesheet" />
+</head>
+
+<body>
+<div th:replace="commons/topbar :: umaTopbar"></div>
+<div class="container-fluid">
+    <div class="btn-group-vertical">
+        <button type="button" class="btn btn-outline-primary" th:each="msgpack:${msgpackList}" th:onclick="getMsgpack([[${msgpack.path}]])">[[${msgpack.name}]]</button>
+    </div>
+    <div class="json-view">
+
+    </div>
+</div>
+<!-- Javascript-->
+<script th:src="@{/webjars/bootstrap/5.1.1/js/bootstrap.bundle.min.js}"></script>
+<script>
+    function getMsgpack(path) {
+        const httpRequest = new XMLHttpRequest();//第一步：建立所需的对象
+        var obj = {
+            "path": path,
+        }
+        httpRequest.open('POST', '/uma/getMsgpack', true);//第二步：打开连接  将请求参数写在url中  ps:"./Ptest.php?name=test&nameone=testone"
+        httpRequest.setRequestHeader("Content-type","application/json");//设置请求头 注：post方式必须设置请求头（在建立连接后设置请求头）var obj = { name: 'zhansgan', age: 18 };
+        httpRequest.send(JSON.stringify(obj));//发送请求 将json写入send中
+        /**
+         * 获取数据后的处理程序
+         */
+        httpRequest.onreadystatechange = function () {
+            if (httpRequest.readyState === 4 && httpRequest.status === 200) {
+                const json = httpRequest.responseText;//获取到json字符串，还需解析
+                console.log(json);
+            }
+        };
+    }
+</script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+server:
+  port: 9827
+spring:
+  datasource:
+    driver-class-name: org.sqlite.JDBC
+    url: jdbc:sqlite:pgtools.db
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: false
+    open-in-view: false
+  thymeleaf:
+    cache: false
+    check-template: true
+    check-template-location: true
+    enabled: true
+    encoding: UTF-8
+    mode: HTML
+    prefix: classpath:/templates/
+    suffix: .html
+  servlet:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 20MB
+  web:
+    resources:
+      static-locations: classpath:/static/
+  devtools:
+    restart:
+      enabled: true
+      additional-paths: src/main/java
+      exclude: static/**,templates/**
